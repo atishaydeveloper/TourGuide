@@ -1,32 +1,27 @@
 import React, { useState } from 'react';
-import SiteSelection from '../components/SiteSelection';
+import { Box, Container, Heading, Text } from '@chakra-ui/react';
 import MapView from '../components/MapView';
-import AIAgent from '../components/AIAgent';
-import Recommendations from '../components/Recommendations';
-import BudgetPlanner from '../components/BudgetPlanner';
-import LocalEvents from '../components/LocalEvents';
+import SiteSelection from '../components/SiteSelection';
 
 function Home() {
   const [selectedSite, setSelectedSite] = useState(null);
 
-  const handleSiteSelected = (siteName) => {
-    setSelectedSite(siteName);
-  };
-
   return (
-    <div className="container">
-      <aside className="sidebar">
-        <SiteSelection onSiteSelected={handleSiteSelected} />
-        <AIAgent siteName={selectedSite} />
-      </aside>
-
-      <main className="main-content">
-        {selectedSite && <MapView site={selectedSite} />}
-        <Recommendations siteName={selectedSite} />
-        <BudgetPlanner />
-        <LocalEvents />
-      </main>
-    </div>
+    <Container maxW="container.xl" py={5}>
+      <Box mb={8}>
+        <Heading as="h1" mb={4}>Virtual Tour Guide</Heading>
+        <Text fontSize="lg">Explore heritage sites with our interactive guide</Text>
+      </Box>
+      
+      <Box display="flex" gap={6} flexDirection={{ base: 'column', md: 'row' }}>
+        <Box flex={1}>
+          <SiteSelection onSiteSelect={setSelectedSite} />
+        </Box>
+        <Box flex={2}>
+          <MapView site={selectedSite} />
+        </Box>
+      </Box>
+    </Container>
   );
 }
 

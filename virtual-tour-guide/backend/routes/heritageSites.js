@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const HeritageSite = require('../models/HeritageSite');
+const HeritageSite = require('../models/heritageSite');
 
 // GET all heritage sites
 router.get('/', async (req, res) => {

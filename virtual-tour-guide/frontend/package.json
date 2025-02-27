@@ -1,17 +1,18 @@
 {
   "name": "virtual-tour-guide-frontend",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@chakra-ui/react": "^2.8.0",
-    "@emotion/react": "^11.11.0",
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
-    "axios": "^1.4.0",
-    "framer-motion": "^10.12.16",
+    "axios": "^1.6.7",
+    "framer-motion": "^11.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.11.2",
-    "react-scripts": "5.0.1"
+    "react-router-dom": "^6.22.1",
+    "react-scripts": "^5.0.1",
+    "web-vitals": "^3.5.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -36,5 +37,19 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/react": "^14.2.1",
+    "@testing-library/user-event": "^14.5.2"
+  },
+  "overrides": {
+    "nth-check": "^2.0.1",
+    "postcss": "^8.4.31",
+    "resolve-url-loader": "^5.0.0",
+    "serialize-javascript": "^6.0.2",
+    "terser": "^5.27.2",
+    "webpack": "^5.90.3"
   }
 }

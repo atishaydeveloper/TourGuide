@@ -1,18 +1,15 @@
 import React from 'react';
-import { ChakraProvider, Box, VStack } from '@chakra-ui/react';
+import { ChakraProvider } from '@chakra-ui/react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import theme from './styles/theme';
 
 function App() {
   return (
-    <ChakraProvider theme={theme}>
+    <ChakraProvider>
       <Router>
-        <Box minH="100vh">
-          <Routes>
-            <Route path="/" element={<Home />} />
-          </Routes>
-        </Box>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
       </Router>
     </ChakraProvider>
   );
