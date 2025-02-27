@@ -1,0 +1,201 @@
+.budget-planner {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.budget-form {
+  display: grid;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: bold;
+}
+
+.form-group select,
+.form-group input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.budget-summary {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.budget-details {
+  margin: 20px 0;
+}
+
+.budget-tips {
+  background-color: #e8f4f8;
+  padding: 15px;
+  border-radius: 4px;
+  margin-top: 20px;
+}
+
+.budget-tips ul {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+/* Local Events & Handicrafts Styles */
+.local-events-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tabs button {
+  padding: 10px 20px;
+  border: none;
+  background: #f0f0f0;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.tabs button.active {
+  background: #007bff;
+  color: white;
+}
+
+/* Events Styles */
+.events-calendar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.event-day {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.event-card {
+  display: flex;
+  gap: 15px;
+  padding: 15px;
+  background: white;
+  margin: 10px 0;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.event-card img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Handicrafts Styles */
+.handicrafts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.craft-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.craft-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.craft-details {
+  padding: 15px;
+}
+
+/* Shopping Cart Styles */
+.shopping-cart {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  width: 300px;
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.cart-total {
+  margin-top: 15px;
+  text-align: right;
+}
+
+.checkout-button {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .event-card {
+    flex-direction: column;
+  }
+  
+  .event-card img {
+    width: 100%;
+  }
+  
+  .shopping-cart {
+    position: static;
+    width: 100%;
+    margin-top: 20px;
+  }
+}
