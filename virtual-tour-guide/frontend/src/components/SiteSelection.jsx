@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Box, VStack, Heading, List, ListItem, Text } from '@chakra-ui/react';
 
-function SiteSelection() {
+function SiteSelection({ onSiteSelect }) {
   const [selectedSite, setSelectedSite] = useState(null);
 
-  // Sample heritage sites data
+  // Sample heritage sites data with updated coordinates
   const sampleSites = [
     {
       _id: '1',
@@ -22,13 +22,29 @@ function SiteSelection() {
       _id: '3',
       name: 'Hawa Mahal',
       description: 'Palace in Jaipur, India, built from red and pink sandstone.',
-      coordinates: { lat: 26.9239, lng: 75.8267 }
+      coordinates: { lat: 26.9239, lng: 75.8267 },
+      streetViewParams: {
+        position: { lat: 26.9239, lng: 75.8267 },
+        pov: { heading: 100, pitch: 10 },
+        zoom: 1
+      }
+    },
+    {
+      _id: '4',
+      name: 'Ellora Caves',
+      description: 'A UNESCO World Heritage Site featuring rock-cut temples from the 6th-8th century CE in Maharashtra, India.',
+      coordinates: { lat: 20.0268, lng: 75.1779 },
+      streetViewParams: {
+        position: { lat: 20.0268, lng: 75.1779 },
+        pov: { heading: 45, pitch: 10 },
+        zoom: 1
+      }
     }
   ];
 
   const handleSiteClick = (site) => {
     setSelectedSite(site);
-    // You can add logic here to update the map view
+    onSiteSelect(site);
   };
 
   return (
@@ -42,6 +58,8 @@ function SiteSelection() {
             _hover={{ bg: 'gray.50', cursor: 'pointer' }}
             bg={selectedSite?._id === site._id ? 'gray.100' : 'transparent'}
             onClick={() => handleSiteClick(site)}
+            borderRadius="md"
+            transition="all 0.2s"
           >
             <Text fontWeight="medium">{site.name}</Text>
             <Text fontSize="sm" color="gray.600">{site.description}</Text>

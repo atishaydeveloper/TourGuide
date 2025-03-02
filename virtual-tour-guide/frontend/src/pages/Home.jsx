@@ -6,6 +6,10 @@ import SiteSelection from '../components/SiteSelection';
 function Home() {
   const [selectedSite, setSelectedSite] = useState(null);
 
+  const handleSiteSelect = (site) => {
+    setSelectedSite(site);
+  };
+
   return (
     <Container maxW="container.xl" py={5}>
       <Box mb={8}>
@@ -15,7 +19,7 @@ function Home() {
       
       <Box display="flex" gap={6} flexDirection={{ base: 'column', md: 'row' }}>
         <Box flex={1}>
-          <SiteSelection onSiteSelect={setSelectedSite} />
+          <SiteSelection onSiteSelect={handleSiteSelect} />
         </Box>
         <Box flex={2}>
           <MapView site={selectedSite} />
