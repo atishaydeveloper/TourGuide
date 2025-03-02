@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Heritage Site Explorer</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 20px;
+    }
+
+    #container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    #heritage-selection {
+      margin-bottom: 20px;
+    }
+
+    #results {
+      margin-top: 20px;
+    }
+
+    .result-section {
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .result-section h3 {
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="container">
+    <h1>Heritage Site Explorer</h1>
+
+    <div id="heritage-selection">
+      <label for="heritage-site">Select a Heritage Site:</label>
+      <select id="heritage-site">
+        <option value="">-- Select --</option>
+        <option value="Eiffel Tower, Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France">Eiffel Tower (Paris)</option>
+        <option value="Great Wall of China">Great Wall of China</option>
+        <option value="Colosseum, Piazza del Colosseo, 1, 00184 Roma RM, Italy">Colosseum (Rome)</option>
+        <!-- Add more heritage sites here -->
+      </select>
+      <button onclick="searchNearby()">Search</button>
+    </div>
+
+    <div id="results">
+
+      <div id="hotels" class="result-section">
+        <h3>Nearby Hotels (Amadeus)</h3>
+        <ul id="hotel-list"></ul>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    // Replace with your actual Google Maps API key
+    const apiKey = "AIzaSyBHCn4CwOTkf-MTiwhAvXsu0ytBUf6cjac";  // **IMPORTANT: Add your API Key**
+    const amadeusClientId = "jZxF0GZIkLd4RTRWLZ7o8R4ATHlE1AAe"; //**Add your Amadeus client ID**
+    const amadeusClientSecret = "jZxF0GZIkLd4RTRWLZ7o8R4ATHlE1AAe"; //**Add your amadeus client secret**
+
+    async function searchNearby() {
+      const heritageSite = document.getElementById("heritage-site").value;
+
+      if (!heritageSite) {
+        alert("Please select a heritage site.");
+        return;
+      }
+
+      // Clear previous results
+      document.getElementById("hotel-list").innerHTML = "";
+
+      try {
+        const geocodeData = await geocodeHeritageSite(heritageSite); // Your existing geocoding function
+        const { lat, lng } = geocodeData.results[0].geometry.location;
+
+        const accessToken = await getAmadeusAccessToken(amadeusClientId, amadeusClientSecret); // Replace placeholders
+        const hotelResults = await getNearbyAmadeusHotels(lat, lng, accessToken);
+
+        displayAmadeusHotelResults("hotel-list", hotelResults); // New function to display Amadeus results
+
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        alert("An error occurred while fetching data. Check the console.");
+      }
+    }
+
+    async function geocodeHeritageSite(heritageSite) {
+      // Geocode the heritage site to get its coordinates
+      const geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${heritageSite}&key=${apiKey}`;
+      console.log("Geocoding URL:", geocodeUrl);
+      try {
+        const geocodeResponse = await fetch(geocodeUrl);
+        const geocodeData = await geocodeResponse.json();
+        console.log("Geocoding Response:", JSON.stringify(geocodeData, null, 2));
+
+        if (geocodeData.status !== "OK" || geocodeData.results.length === 0) {
+          throw new Error("Could not geocode heritage site.");
+        }
+
+        return geocodeData;
+      } catch (error) {
+        console.error("Error in geocodeHeritageSite:", error); // More specific error message
+        throw error;
+      }
+    }
+
+    async function getAmadeusAccessToken(clientId, clientSecret) {
+      const tokenUrl = "https://test.api.amadeus.com/v1/security/oauth2/token"; //Use test API endpoint
+      const requestBody = `grant_type=client_credentials&client_id=${clientId}&client_secret=${clientSecret}`;
+
+      try {
+        const response = await fetch(tokenUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: requestBody,
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(`Amadeus authentication failed: ${data.error_description || data.error}`);
+        }
+
+        return data.access_token;
+      } catch (error) {
+        console.error("Error getting Amadeus access token:", error);
+        throw error;
+      }
+    }
+
+    async function getNearbyAmadeusHotels(latitude, longitude, accessToken) {
+      const hotelsUrl = `https://test.api.amadeus.com/v1/reference-data/locations/hotels/by-geocode?latitude=${latitude}&longitude=${longitude}&radius=5&radiusUnit=KM`; // Example URL
+
+      try {
+        const response = await fetch(hotelsUrl, {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(`Amadeus hotel search failed: ${data.errors ? data.errors[0].detail : response.statusText}`);
+        }
+
+        return data.data; // Returns array of hotels
+      } catch (error) {
+        console.error("Error searching for hotels:", error);
+        throw error;
+      }
+    }
+
+    function displayAmadeusHotelResults(listId, hotelResults) {
+      const listElement = document.getElementById(listId);
+
+      if (!hotelResults || hotelResults.length === 0) {
+        listElement.innerHTML = "<li>No hotels found.</li>";
+        return;
+      }
+
+      hotelResults.forEach(hotel => {
+        const listItem = document.createElement("li");
+        listItem.textContent = hotel.name || "Unknown Name"; // Display the name (handle missing names)
+        listElement.appendChild(listItem);
+
+        //Add other hotel details here.  For example,
+        //if (hotel.address) {
+        //    listItem.textContent += ` - ${hotel.address.cityName}, ${hotel.address.countryCode}`;
+        //}
+      });
+    }
+  </script>
+
+</body>
+</html>

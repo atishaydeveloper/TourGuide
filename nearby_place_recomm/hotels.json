@@ -1,0 +1,303 @@
+[
+    {
+      "property name": "The Oberoi Amarvilas",
+      "latitude": 27.1825,
+      "longitude": 78.0219,
+      "min cost": 28000,
+      "rating": 4.9,
+      "review_count": 2500,
+      "room_type": "Luxury Suite",
+      "images src": "https://example.com/oberoi.jpg"
+    },
+    {
+      "property name": "ITC Mughal, Agra",
+      "latitude": 27.1780,
+      "longitude": 78.0086,
+      "min cost": 20000,
+      "rating": 4.7,
+      "review_count": 1800,
+      "room_type": "Deluxe Room",
+      "images src": "https://example.com/itcmughal.jpg"
+    },
+    {
+      "property name": "Trident Agra",
+      "latitude": 27.1732,
+      "longitude": 78.0132,
+      "min cost": 22000,
+      "rating": 4.8,
+      "review_count": 1500,
+      "room_type": "Executive Suite",
+      "images src": "https://example.com/tridentagra.jpg"
+    },
+    {
+      "property name": "Taj Hotel & Convention Centre Agra",
+      "latitude": 27.1837,
+      "longitude": 78.0119,
+      "min cost": 15000,
+      "rating": 4.5,
+      "review_count": 900,
+      "room_type": "Deluxe Room",
+      "images src": "https://example.com/tajhotelagra.jpg"
+    },
+    {
+      "property name": "Hotel Clarks Shiraz",
+      "latitude": 27.1700,
+      "longitude": 78.0137,
+      "min cost": 8000,
+      "rating": 4.2,
+      "review_count": 600,
+      "room_type": "Standard Room",
+      "images src": "https://example.com/clarksshiraz.jpg"
+    },
+    {
+      "property name": "Fortune Resort Riverfront Agra",
+      "latitude": 27.1755,
+      "longitude": 78.0270,
+      "min cost": 7000,
+      "rating": 4.0,
+      "review_count": 400,
+      "room_type": "Standard Room",
+      "images src": "https://example.com/fortuneara.jpg"
+    },
+    {
+      "property name": "Crystal Sarovar Premiere Agra",
+      "latitude": 27.1705,
+      "longitude": 78.0200,
+      "min cost": 9000,
+      "rating": 4.1,
+      "review_count": 500,
+      "room_type": "Executive Room",
+      "images src": "https://example.com/crystalsarovar.jpg"
+    },
+    {
+      "property name": "Jaypee Palace Hotel & Convention Centre",
+      "latitude": 27.1790,
+      "longitude": 78.0150,
+      "min cost": 11000,
+      "rating": 4.3,
+      "review_count": 700,
+      "room_type": "Deluxe Room",
+      "images src": "https://example.com/jaypeepalace.jpg"
+    },
+    {
+      "property name": "Fortune Inn Agra",
+      "latitude": 27.1740,
+      "longitude": 78.0160,
+      "min cost": 6000,
+      "rating": 3.8,
+      "review_count": 350,
+      "room_type": "Standard Room",
+      "images src": "https://example.com/fortuneinn.jpg"
+    },
+    {
+      "property name": "Hotel Sidhartha",
+      "latitude": 27.1680,
+      "longitude": 78.0220,
+      "min cost": 5000,
+      "rating": 4.0,
+      "review_count": 250,
+      "room_type": "Budget Room",
+      "images src": "https://example.com/sidhartha.jpg"
+    },
+    {
+      "property name": "Hotel Ellora",
+      "latitude": 20.0175,
+      "longitude": 75.1800,
+      "min cost": 4000,
+      "rating": 4.2,
+      "review_count": 300,
+      "room_type": "Deluxe Room",
+      "images src": "https://example.com/hotelellora.jpg"
+    },
+    {
+      "property name": "Aurangabad Hotel",
+      "latitude": 20.0200,
+      "longitude": 75.1780,
+      "min cost": 3500,
+      "rating": 4.0,
+      "review_count": 280,
+      "room_type": "Standard Room",
+      "images src": "https://example.com/aurangabadhotel.jpg"
+    },
+    {
+      "property name": "The Century Resort Aurangabad",
+      "latitude": 20.0250,
+      "longitude": 75.1820,
+      "min cost": 4500,
+      "rating": 4.3,
+      "review_count": 320,
+      "room_type": "Resort Room",
+      "images src": "https://example.com/centuryresort.jpg"
+    },
+    {
+      "property name": "Taj Residency Aurangabad",
+      "latitude": 20.0220,
+      "longitude": 75.1805,
+      "min cost": 5000,
+      "rating": 4.5,
+      "review_count": 350,
+      "room_type": "Deluxe Suite",
+      "images src": "https://example.com/tajresidency.jpg"
+    },
+    {
+      "property name": "Hotel The Governor",
+      "latitude": 20.0190,
+      "longitude": 75.1770,
+      "min cost": 3000,
+      "rating": 3.9,
+      "review_count": 200,
+      "room_type": "Standard Room",
+      "images src": "https://example.com/thegovernor.jpg"
+    },
+    {
+      "property name": "Hotel Bliss Aurangabad",
+      "latitude": 20.0230,
+      "longitude": 75.1810,
+      "min cost": 3800,
+      "rating": 4.0,
+      "review_count": 220,
+      "room_type": "Deluxe Room",
+      "images src": "https://example.com/hotelbliss.jpg"
+    },
+    {
+      "property name": "Citrus Aurangabad",
+      "latitude": 20.0240,
+      "longitude": 75.1830,
+      "min cost": 4200,
+      "rating": 4.2,
+      "review_count": 310,
+      "room_type": "Executive Room",
+      "images src": "https://example.com/citrusaurangabad.jpg"
+    },
+    {
+      "property name": "Green Park Hotel Aurangabad",
+      "latitude": 20.0210,
+      "longitude": 75.1795,
+      "min cost": 3700,
+      "rating": 4.1,
+      "review_count": 290,
+      "room_type": "Standard Room",
+      "images src": "https://example.com/greenpark.jpg"
+    },
+    {
+      "property name": "Hotel Shreyas",
+      "latitude": 20.0205,
+      "longitude": 75.1800,
+      "min cost": 3300,
+      "rating": 4.0,
+      "review_count": 260,
+      "room_type": "Deluxe Room",
+      "images src": "https://example.com/hotelshreyas.jpg"
+    },
+    {
+      "property name": "Pride Residency Aurangabad",
+      "latitude": 20.0225,
+      "longitude": 75.1825,
+      "min cost": 3900,
+      "rating": 4.2,
+      "review_count": 300,
+      "room_type": "Deluxe Suite",
+      "images src": "https://example.com/prideresidency.jpg"
+    },
+    {
+      "property name": "Evolve Back Hampi",
+      "latitude": 15.3300,
+      "longitude": 76.4800,
+      "min cost": 8000,
+      "rating": 4.7,
+      "review_count": 1500,
+      "room_type": "Luxury Suite",
+      "images src": "https://example.com/evolvebackhampi.jpg"
+    },
+    {
+      "property name": "Hampi Boulders Resort",
+      "latitude": 15.3270,
+      "longitude": 76.4830,
+      "min cost": 6000,
+      "rating": 4.5,
+      "review_count": 1200,
+      "room_type": "Deluxe Room",
+      "images src": "https://example.com/hampiboulders.jpg"
+    },
+    {
+      "property name": "Heritage Resort Hampi",
+      "latitude": 15.3240,
+      "longitude": 76.4825,
+      "min cost": 5500,
+      "rating": 4.3,
+      "review_count": 900,
+      "room_type": "Deluxe Room",
+      "images src": "https://example.com/heritageresort.jpg"
+    },
+    {
+      "property name": "Hampi Heartland Resort",
+      "latitude": 15.3220,
+      "longitude": 76.4810,
+      "min cost": 5000,
+      "rating": 4.1,
+      "review_count": 800,
+      "room_type": "Standard Room",
+      "images src": "https://example.com/hampiheartland.jpg"
+    },
+    {
+      "property name": "Gerusoppa Resort",
+      "latitude": 15.3200,
+      "longitude": 76.4805,
+      "min cost": 4500,
+      "rating": 4.0,
+      "review_count": 700,
+      "room_type": "Standard Room",
+      "images src": "https://example.com/gerusoppa.jpg"
+    },
+    {
+      "property name": "Clarks Inn Hampi",
+      "latitude": 15.3230,
+      "longitude": 76.4835,
+      "min cost": 4800,
+      "rating": 4.2,
+      "review_count": 850,
+      "room_type": "Deluxe Room",
+      "images src": "https://example.com/clarksinnhampi.jpg"
+    },
+    {
+      "property name": "Hampi Heritage Village",
+      "latitude": 15.3215,
+      "longitude": 76.4820,
+      "min cost": 4300,
+      "rating": 4.0,
+      "review_count": 650,
+      "room_type": "Standard Room",
+      "images src": "https://example.com/hampiheritage.jpg"
+    },
+    {
+      "property name": "Jungle Resort Hampi",
+      "latitude": 15.3290,
+      "longitude": 76.4850,
+      "min cost": 5200,
+      "rating": 4.3,
+      "review_count": 900,
+      "room_type": "Deluxe Room",
+      "images src": "https://example.com/jungleresorthampi.jpg"
+    },
+    {
+      "property name": "Hampi Lodge",
+      "latitude": 15.3275,
+      "longitude": 76.4840,
+      "min cost": 4700,
+      "rating": 4.1,
+      "review_count": 780,
+      "room_type": "Standard Room",
+      "images src": "https://example.com/hampilodge.jpg"
+    },
+    {
+      "property name": "Royal Orchid Hampi",
+      "latitude": 15.3260,
+      "longitude": 76.4830,
+      "min cost": 5500,
+      "rating": 4.2,
+      "review_count": 850,
+      "room_type": "Deluxe Suite",
+      "images src": "https://example.com/royalorchid.jpg"
+    }
+  ]
+  
